@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Face Filters</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/x-icon" href="Images/logo.png">
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script> <!--  p5.js -->
+	<script src="https://cdn.jsdelivr.net/npm/clmtrackr@1.1.2/build/clmtrackr.min.js"></script> <!--  clmtrackr -->
+	<script src="face_filters.js"></script>
+	<div class="heading">Face Filters Using Face Recognition</div>
+	<nav>
+		<div class="navicon">
+			<div></div>
+		</div>
+		<a>Home</a>
+		<button class="btn" onclick="selectFrame()">Canvas Borders</button>
+		<a href="edit_index.html" style="text-decoration: none;">Edit Image</a>
+
+	</nav>
+	<button class="button-32" role="button">Filters</button>
+	<div class="vertical-menu">
+		<div class="select">
+			<select id="mySelect2" onchange="applyFilter('mySelect2')">
+				<option value="0">Avengers</option>
+				<option value="1">Spiderman Mask</option>
+				<option value="2">Iron Man</option>
+				<option value="3">Captain America</option>
+			</select>
+		</div>
+		<div class="select">
+			<select id="mySelect3" onchange="applyFilter('mySelect3')">
+				<option value="4">Animals</option>
+				<option value="5">Dog Filter</option>
+				<option value="6">Cat Filter</option>
+				<option value="7">Rabbit</option>
+			</select>
+		</div>
+		<div class="select">
+			<select id="mySelect5" onchange="applyFilter('mySelect5')">
+				<option value="8">Lens</option>
+				<option value="9">Green sunglass</option>
+				<option value="10">Black sunglass</option>
+				<option value="11">Oval sunglass</option>
+			</select>
+		</div>
+		<div class="select">
+			<select id="mySelect6" onchange="applyFilter('mySelect6')">
+				<option value="12">Hats</option>
+				<option value="13">Panama Hat</option>
+				<option value="24">Magician Hat</option>
+			</select>
+		</div>
+		<div class="select">
+			<select id="mySelect7" onchange="applyFilter('mySelect7')">
+				<option value="14">Crowns</option>
+				<option value="15">Princess crown</option>
+				<option value="25">Prince crown</option>
+			</select>
+		</div>
+		<div class="select">
+			<select id="mySelect8" onchange="applyFilter('mySelect8')">
+				<option value="16">Fun Emojis</option>
+				<option value="17">Joker</option>
+				<option value="18">Birthday Party</option>
+				<option value="19">Thug Life</option>
+			</select>
+		</div>
+		<div class="select">
+			<select id="mySelect9" onchange="applyFilter('mySelect9')">
+				<option value="20">Devil</option>
+				<option value="21">Devil Horns</option>
+			</select>
+		</div>
+
+		<div class="select">
+			<select id="mySelect10" onchange="applyFilter('mySelect10')">
+				<option value="22">Face</option>
+				<option value="23">Facial Landmarks</option>
+			</select>
+		</div>
+
+		<div class="select">
+			<select id="mySelect11" onchange="applyFilter('mySelect11')">
+				<option value="26">Emoji Face</option>
+				<option value="27">SunGlass Face Emoji</option>
+				<option value="28">Smile in Pain Emoji</option>
+			</select>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Image</title>
+    <link rel="stylesheet" href="edit_css.css">
+    <link rel="icon" type="image/x-icon" href="Images/logo.png">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script> <!--  p5.js -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <button style="border: none;margin: 20px 0px 100px 0px;">Edit</button>
+            </li>
+            <li>
+                <label for="color">Color:</label>
+                <input type="color" id="color" />
+            </li>
+            <li>
+                <label for="weight">Stroke:</label>
+                <input type="number" id="weight" min="2" max="200" value="3" />
+            </li>
+            <li>
+                <button id="clear" onclick="Remove()" style="border-color: white;">Clear</button>
+            </li>
+
+        </ul>
+    </div>
+    <script src="edit.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <div class="button">
+        <div class="content">
+            <i class="bx bx-cloud-download"></i>
+            <span class="button-text">Save</span>
+        </div>
+    </div>
+    <script>
+        const button = document.querySelector(".button");
+        button.addEventListener("click", () => {
+            button.classList.add("active");
+            setTimeout(() => {
+                button.classList.remove("active");
+                button.querySelector("i").classList.replace("bx-cloud-download", "bx-check-circle")
+                button.querySelector("span").innerText = "Done";
+            }, 4000);
+        });
+        button.addEventListener("click", saveImage);
+    </script>
+    <div class="wrapper">
+        <div class="icon instagram">
+            <div class="tooltip">
+                Rotate
+            </div>
+            <span>
+                <i class="fab fa-facebook-f"></i>
+                <button onclick="RotateCanvas()">
+                    <img class="rotate" src="Images/rotate.png">
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="select-dropdown">
+        <select onchange="addFilter()" id="filters">
+            <option value="0">Filters</option>
+            <option value="1">Dilate</option>
+            <option value="2">Erode</option>
+            <option value="3">Posterize-Low</option>
+            <option value="4">Posterize-High</option>
+            <option value="5">Blur-Low</option>
+            <option value="6">Blur-High</option>
+            <option value="7">Opaque</option>
+        </select>
+    </div>
+</body>
+</html>
